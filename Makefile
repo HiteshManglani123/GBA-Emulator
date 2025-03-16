@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2 -g   # Enable warnings, optimization, and debugging
 
 # List of source files
-SRCS = gba.c setup.c
+SRCS = gba.c setup.c instruction_parser.c
 OBJS = $(SRCS:.c=.o)  # Convert .c files to .o files automatically
 
 # Output binary
@@ -23,4 +23,3 @@ $(TARGET): $(OBJS)
 # Clean build files
 clean:
 	rm -f $(OBJS) $(TARGET)
-

@@ -1,0 +1,12 @@
+Overal Current Focus
+## Emulate ARM7TDMI CPU
+* Be able to disassemble each instruciton in 32 bit ARM mode, and 16 bit THUMB mode
+* Execute each instruction and modify each register accordingly
+
+# Plan
+* Focus on getting a correct disassembler for the ARM7TDMI ARM MODE
+* Start implementing 16 bit THUMB Mode disassemble (should be simpler)
+
+## Todo
+[x] Disassemble ARM7TDMI ARM Mode
+[] Disassemble AMR7TDMI THUMB Mode

@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
 
     uint32_t address = 134217728; // 0x08000000
 
-    uint8_t instruction_mode = ARM;
+    uint8_t instruction_mode = THUMB;
 
     while (amount_to_deocde > 0) {
 
@@ -79,12 +79,12 @@ int main(int argc, char *argv[]) {
 
             *pc += 4;
             address += 4;
-
         } else {
             // THUMB instruction
             uint16_t instruction = fetch_instruction_thumb(memory, *pc);
             printf("0x%.8x: %.4x ", address, instruction);
-            decode_instruction_thumb(instruction);
+            // Todo: check if pc needs to be adjusted, it could be bytes ahead
+            decode_instruction_thumb(instruction, *pc, registers[13], registers[14]);
             *pc += 2;
             address += 2;
         }
